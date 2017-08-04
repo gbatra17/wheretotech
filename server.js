@@ -8,5 +8,5 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({encoded: true }));
 app.get('/', function(req, res) {
-	res.render('<h1> hello world! </h1>');
+	res.send('<h1> hello world! </h1>');
 })
