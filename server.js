@@ -11,6 +11,7 @@ var db = require('./config/db.js')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('X-HTTP-Method-Override')); 
+app.use(express.static(__dirname + '/node_modules'));
 app.use(express.static(__dirname + '/client'));
 
 app.listen(port, function() {

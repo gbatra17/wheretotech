@@ -6,7 +6,8 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "grunt": "^1.0.1",
     "method-override": "^2.3.9",
     "mongoose": "^4.11.5",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "teleport-autocomplete": "^0.3.3"
   }
 }

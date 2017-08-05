@@ -1,0 +1,295 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"style",
+				"stylesheet"
+			],
+			[
+				"border-",
+				"border-radius"
+			],
+			[
+				"link",
+				"linkSchema"
+			],
+			[
+				"compa",
+				"comparePassword"
+			],
+			[
+				"prod",
+				"prodServer"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"time",
+				"timestamps"
+			],
+			[
+				"file",
+				"fileTwoWordLength"
+			],
+			[
+				"pro",
+				"property"
+			],
+			[
+				"mess",
+				"messageQuery"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 372.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 363.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/garima/Documents/HRR25/doyouevenhashtag/package.json",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/node_modules/teleport-autocomplete/dist/teleport-autocomplete.js",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/node_modules/teleport-autocomplete/examples/basic.html",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/client/styles/styles.css",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/config/secrets.js",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/client/components/search.js",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/client/views/app.html",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/client/components/app.js",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/client/index.js",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/server.js",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/server-config.js",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/config/db.js",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/Procfile",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/.gitignore",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/client/index.html",
+		"/home/garima/Documents/HRR25/doyouevenhashtag/index.html",
+		"/home/garima/Documents/HRR25/MVP/index.html",
+		"/home/garima/Documents/HRR25/shortly-deploy/app/collections/links.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/app/collections/users.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/server-config.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/app/models/link.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/app/models/user.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/app/config.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/views/layout.ejs",
+		"/home/garima/Documents/HRR25/shortly-deploy/Gruntfile.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/test/ServerSpec.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/lib/utility.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/views/index.ejs",
+		"/home/garima/Documents/HRR25/shortly-deploy/server.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/lib/request-handler.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/package.json",
+		"/home/garima/Documents/HRR25/shortly-deploy/public/style.css",
+		"/home/garima/Documents/HRR25/shortly-deploy/public/dist/shortly-deploy.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/public/client/router.js",
+		"/home/garima/Documents/HRR25/shortly-deploy/public/client/app.js",
+		"/home/garima/.ssh/id_rsa.pub",
+		"/home/garima/.ssh/id_rsa",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/app/models/link.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/index.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/lib/utility.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/shortly.js",
+		"/home/garima/.config/sublime-text-3/Packages/JSLint/Default.sublime-keymap",
+		"/home/garima/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/app/models/click.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/test/ServerSpec.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/app/config.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/app/models/user.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/app/collections/links.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/app/collections/users.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/views/partials/backbone_templates.ejs",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/views/index.ejs",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/views/layout.ejs",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/views/signup.ejs",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/views/login.ejs",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/public/client/router.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/public/client/linksView.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/public/client/links.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/public/client/createLinkView.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/public/client/app.js",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/package.json",
+		"/home/garima/Documents/HRR25/hrr25-shortly-express/db/.gitkeep",
+		"/home/garima/floobits/welcome.md",
+		"/home/garima/Documents/HRR25/SA/hrr25-self-assessment-week-04-v3r/node-req-count/server.js",
+		"/home/garima/Documents/HRR25/SA/hrr25-self-assessment-week-04-v3r/node-req-count/README.md",
+		"/home/garima/Documents/HRR25/SA/hrr25-self-assessment-week-04-v3r/node-req-count/index.js",
+		"/home/garima/Documents/HRR25/SA/hrr25-self-assessment-week-04-v3r/async-word-count/README.md",
+		"/home/garima/Documents/HRR25/SA/hrr25-self-assessment-week-04-v3r/async-word-count/async-word-count.js",
+		"/home/garima/Documents/HRR25/SA/hrr25-self-assessment-week-04-v3r/async-word-count/files/fileTwo.txt",
+		"/home/garima/Documents/HRR25/SA/hrr25-self-assessment-week-04-v3r/async-word-count/files/fileOne.txt",
+		"/home/garima/Documents/hrr25-databases/package.json",
+		"/home/garima/Documents/hrr25-databases/server/spec/server-spec.js",
+		"/home/garima/Documents/hrr25-databases/server/app.js",
+		"/home/garima/Documents/hrr25-databases/server/db/index.js",
+		"/home/garima/Documents/hrr25-databases/client/scripts/app.js",
+		"/home/garima/Documents/hrr25-databases/client/env/config.js",
+		"/home/garima/Documents/hrr25-databases/server/routes.js",
+		"/home/garima/Documents/hrr25-databases/client/index.html",
+		"/home/garima/Documents/hrr25-databases/server/schema.sql"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"app/collections"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "search.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 389.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
