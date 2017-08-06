@@ -1,7 +1,7 @@
 {
-  "name": "doyouevenhashtag",
+  "name": "wheretomove",
   "version": "1.0.0",
-  "description": "an insta-filter for popular locations based on your area code",
+  "description": "showing the best place for engineers to move",
   "engines": {
     "node": ">=4.0.0"
   },
@@ -11,14 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gbatra17/doyouevenhashtag.git"
+    "url": "git+https://github.com/gbatra17/wheretomove.git"
   },
   "author": "garima batra",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gbatra17/doyouevenhashtag/issues"
-  },
-  "homepage": "https://github.com/gbatra17/doyouevenhashtag#readme",
   "dependencies": {
     "angular": "^1.6.5",
     "body-parser": "^1.17.2",

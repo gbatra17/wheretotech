@@ -1,1 +1,1 @@
-angular.module('filter-gram', []);
+angular.module('teleport', []);
