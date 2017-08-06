@@ -1,6 +1,16 @@
-<div class="search-bar form-inline">
- <p>Search here: </p>
- <div> {{ $ctrl.hello }} </div>   
+<div class="search-bar form-inline" ng-controller="SearchCtrl">
+ <p>Search here: </p>  
   <input id="tp-input" class="form-control" type="text"/> 
-  </button>
+<!--   <div> {{titleOfCity}} </div>
+ -->  <ul class="joblist">
+  	<li class="joblistentry" ng-repeat="job in listOfJobs">
+  		<h3> {{job.job.title}} </h3>
+  		<p>Salary Percentiles: </p>
+  		<ul>
+  		<li>25th percentile: {{ '$' + Math.floor(job.salary_percentiles.percentile_25).toLocaleString()  }}</li>
+  		<li>50th percentile: {{ '$' + Math.floor(job.salary_percentiles.percentile_50).toLocaleString() }}</li>
+  		<li>75th percentile: {{ '$' + Math.floor(job.salary_percentiles.percentile_75).toLocaleString() }}</li>
+  		</ul>
+  	</li>
+  </ul>
  </div> 
