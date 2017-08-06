@@ -1,5 +1,5 @@
 {
-  "name": "wheretomove",
+  "name": "wheretotech",
   "version": "1.0.0",
   "description": "showing the best place for engineers to move",
   "engines": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gbatra17/wheretomove.git"
+    "url": "git+https://github.com/gbatra17/wheretotech.git"
   },
   "author": "garima batra",
   "license": "MIT",

@@ -9,9 +9,9 @@ angular.module('teleport')
 		// })
 		teleportSearch.search(value, function(value) {
 			console.log(value);
+			this.hello = value;
 		});
 	});
-	this.hello = "garima";
 })
 .component('search', {
 	bindings: {
