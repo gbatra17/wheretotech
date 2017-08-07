@@ -4,7 +4,7 @@ body {
   background: #f1f1f1;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, p, ul, li {
 	font-family: 'Comfortaa', cursive;
 }
 
@@ -14,7 +14,7 @@ h1, h2 {
 }
 
 div.imgContainer {
-	margin: 10px;
+	margin: 20px;
     width:300px;
 	height:200px;
 	padding: 0px 5px 5px 5px;
@@ -32,8 +32,18 @@ li.joblistentry {
 }
 
 div.weatherContainer {
-	margin: 10px;
-    width:auto;
+	margin: 20px;
+    width:300px;
+	height:auto;
+	padding: 0px 10px 10px 10px;
+	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 5px;
+}
+
+div.scoreContainer {
+	margin: 20px;
+    width:300px;
 	height:auto;
 	padding: 0px 10px 10px 10px;
 	display: inline-block;

@@ -4,7 +4,7 @@
 <!--   <div> {{titleOfCity}} </div>
  --><ul class="joblist">
   	<li class="joblistentry" ng-repeat="job in listOfJobs">
-  		<h3> {{job.job.title}} </h3>
+  		<h4> {{job.job.title}} </h4>
   		<p>Salary Percentiles: </p>
   		<ul>
   		<li>25th percentile: {{ '$' + Math.floor(job.salary_percentiles.percentile_25).toLocaleString()  }}</li>
@@ -15,6 +15,14 @@
   </ul>
   <div class="imgContainer" ng-style="setBackground()"></div>
   <div class="weatherContainer" ng-if="weather != null">
+    <h3> Weather Conditions </h3>
+  	<ul>
+  		<li ng-repeat="weatherProp in weather">
+  			<strong> {{weatherProp.label}} </strong> = {{ weatherProp.float_value || weatherProp.string_value }}
+  		</li>
+  	</ul>
+  </div>
+  <div class="scoreContainer" ng-if="urbanScores != null">
     <h3> Weather Conditions </h3>
   	<ul>
   		<li ng-repeat="weatherProp in weather">

@@ -15,8 +15,11 @@ angular
     const cityImageBySlug = slug =>
     	`https://api.teleport.org/api/urban_areas/slug:${slug}/images`;
 
-    const cityDetailseBySlug = slug =>
+    const cityWeatherBySlug = slug =>
     	`https://api.teleport.org/api/urban_areas/slug:${slug}/details`;
+
+    const cityScoresBySlug = slug =>
+    	`https://api.teleport.org/api/urban_areas/slug:${slug}/scores`;
 
     const filterBySoftwareJobs = jobId => {
       const lowerJobId = jobId.toLowerCase();
@@ -40,7 +43,7 @@ angular
         $scope.listOfJobs = filterByWeb(data.salaries);
       });
 
-    const getWeatherImage = slug =>
+    const getCityImage = slug =>
       $http({
         method: 'GET',
         url: cityImageBySlug(slug),
@@ -59,10 +62,10 @@ angular
 
       });  
 
-    const getCityDetails = slug =>
+    const getWeatherDetails = slug =>
       $http({
         method: 'GET',
-        url: cityDetailseBySlug(slug),
+        url: cityWeatherBySlug(slug),
       }).then(({ data }) => {
       	//weather is category number two 
         $scope.weather = data.categories[2].data;
@@ -71,16 +74,18 @@ angular
     const getUrbanDetails = slug =>
       $http({
         method: 'GET',
-        url: cityDetailseBySlug(slug),
-      }).then(({ data }) => {
-      	//weather is category number two 
-        $scope.weather = data.categories[2].data;
+        url: cityScoresBySlug(slug),
+      }).then(({data}) => {
+      	console.log(data);
+      	$scope.summary = data.summary;
+      	$scope.urbanScores = data.categories;
       });
 
     TeleportAutocomplete.init('#tp-input').on('change', function(value){
     	$scope.titleOfCity = value.title;
     	getCityInfo(value.uaSlug);
-    	getWeatherImage(value.uaSlug);
-    	getCityDetails(value.uaSlug);
+    	getCityImage(value.uaSlug);
+    	getWeatherDetails(value.uaSlug);
+    	getUrbanDetails(value.uaSlug);
     })
   }]);
