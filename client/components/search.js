@@ -77,7 +77,6 @@ angular
         url: cityScoresBySlug(slug),
       }).then(({data}) => {
       	console.log(data);
-      	$scope.summary = data.summary;
       	$scope.urbanScores = data.categories;
       });
 

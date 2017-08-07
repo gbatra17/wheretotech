@@ -15,19 +15,26 @@
   </ul>
   <div class="imgContainer" ng-style="setBackground()"></div>
   <div class="weatherContainer" ng-if="weather != null">
-    <h3> Weather Conditions </h3>
+    <h4> Weather Conditions </h4>
   	<ul>
   		<li ng-repeat="weatherProp in weather">
   			<strong> {{weatherProp.label}} </strong> = {{ weatherProp.float_value || weatherProp.string_value }}
   		</li>
   	</ul>
   </div>
-  <div class="scoreContainer" ng-if="urbanScores != null">
-    <h3> Weather Conditions </h3>
+  <div class="weatherContainer" ng-if="urbanScores != null">
+    <h4> How does it rank/10? </h4>
   	<ul>
-  		<li ng-repeat="weatherProp in weather">
-  			<strong> {{weatherProp.label}} </strong> = {{ weatherProp.float_value || weatherProp.string_value }}
-  		</li>
+  		<li> {{urbanScores[0].name}}: {{ Math.floor(urbanScores[0].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[2].name}}: {{ Math.floor(urbanScores[2].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[5].name}}: {{ Math.floor(urbanScores[5].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[7].name}}: {{ Math.floor(urbanScores[7].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[8].name}}: {{ Math.floor(urbanScores[8].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[10].name}}: {{ Math.floor(urbanScores[10].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[13].name}}: {{ Math.floor(urbanScores[13].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[15].name}}: {{ Math.floor(urbanScores[15].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[14].name}}: {{ Math.floor(urbanScores[14].score_out_of_10)}}   </li>
+  		<li> {{urbanScores[16].name}}: {{ Math.floor(urbanScores[16].score_out_of_10)}}   </li>
   	</ul>
   </div>
  </div> 
