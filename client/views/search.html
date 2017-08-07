@@ -1,8 +1,8 @@
-<div class="search-bar form-inline" ng-controller="SearchCtrl">
+<div class="search-bar form-inline">
  <p>Search here: </p>  
   <input id="tp-input" class="form-control" type="text"/> 
 <!--   <div> {{titleOfCity}} </div>
- -->  <ul class="joblist">
+ --><ul class="joblist">
   	<li class="joblistentry" ng-repeat="job in listOfJobs">
   		<h3> {{job.job.title}} </h3>
   		<p>Salary Percentiles: </p>
@@ -13,4 +13,11 @@
   		</ul>
   	</li>
   </ul>
+<!--   <div class="container" ng-style="{'background-image': 'url(' + imageurl + ')',
+  	'background-size': cover,
+  	'width': auto,
+  	'height': auto,
+  	'max-width':'100%',
+	'max-height':'100%'}">hello</div> -->
+  <div class="container" ng-style="setBackground()"></div>
  </div> 

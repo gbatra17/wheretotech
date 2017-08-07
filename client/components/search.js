@@ -18,7 +18,8 @@ angular
     templateUrl: '../views/search.html',
     controller: 'SearchCtrl',
   })
-  .controller('SearchCtrl', function($http, $scope) {
+  .controller('SearchCtrl', ['$http', '$scope',
+  	function($http, $scope) {
 
   	// $scope.listOfJobs = [];
 
@@ -26,6 +27,9 @@ angular
 
     const citySalaryBySlug = slug =>
       `https://api.teleport.org/api/urban_areas/slug:${slug}/salaries`;
+
+    const cityImageBySlug = slug =>
+    	`https://api.teleport.org/api/urban_areas/slug:${slug}/images`;
 
     const filterBySoftwareJobs = jobId => {
       const lowerJobId = jobId.toLowerCase();
@@ -49,8 +53,30 @@ angular
         $scope.listOfJobs = filterByWeb(data.salaries);
       });
 
+    const getWeatherImage = slug =>
+      $http({
+        method: 'GET',
+        url: cityImageBySlug(slug),
+      }).then(({ data }) => {
+      	var imageurl = data.photos[0].image.mobile;
+      	      	console.log('this is the scope:', data.photos[0].image.mobile);
+      	$scope.setBackground = function(){
+    	return {
+            'background-image':'url(' + imageurl + ')',
+            'background-size': 'cover',
+  			'max-width': '100%',
+  			'max-height': '100%',
+  			'border-radius': '10px',
+  			'box-shadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
+
+        }
+		} 
+
+      });  
+
     TeleportAutocomplete.init('#tp-input').on('change', function(value){
     	$scope.titleOfCity = value.title;
     	getCityInfo(value.uaSlug);
+    	getWeatherImage(value.uaSlug)
     })
-  });
+  }]);
