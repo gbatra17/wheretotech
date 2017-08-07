@@ -68,6 +68,15 @@ angular
         $scope.weather = data.categories[2].data;
       });
 
+    const getUrbanDetails = slug =>
+      $http({
+        method: 'GET',
+        url: cityDetailseBySlug(slug),
+      }).then(({ data }) => {
+      	//weather is category number two 
+        $scope.weather = data.categories[2].data;
+      });
+
     TeleportAutocomplete.init('#tp-input').on('change', function(value){
     	$scope.titleOfCity = value.title;
     	getCityInfo(value.uaSlug);

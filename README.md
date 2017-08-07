@@ -1,4 +1,4 @@
-# Doyouevenhashtag #
+# Where To Tech #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -17,28 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  >Do You Even # ?
+  > Where should you move to for your next cool tech job?
 
 ## Sub-Heading ##
-  > A web-app that filters the most popular geotags at your area code. Save the geotag, visit the location and stay relevant! 
+  > A web-app that gives you salary details and urban conditions for tech jobs in every city in the world!
 
 ## Summary ##
-  > The idea is simple: pop in your area code and we'll filter out the most popular geotags based off of Instagram's location API. Save the geotags in your vault so you can keep track of all the coolest bars/events/museums that people are taking pictures at! 
+  > The idea is simple: pop in the city you're thinking of moving to and we'll provide salary details of all tech jobs in that city and urban living conditions. You can save your favorite cities in your dashboard for later access :) 
 
 ## Problem ##
-  > An alternative to endlessly scrolling through buzzfeed listicles, Facebook events and your own InstaFeed - this web-app makes knowing the coolest places to check out this weekend. 
+  > You're a global nomad with tech skills to boot but you don't know where you want to move next. 
   
 ## Solution ##
-  > Filters out the best public photos that show off the popular geotags in your area code (or 5/10 miles around it).
+  > Enter: Where To Tech, a platform for smart techies like you who're eager and ready for their next adventure. Browse any city and save your favorites!
 
 ## Quote from You ##
-  > "Staying relevant has never been easier"
+  > "Making the jump for your next tech job has never been easier"
 
 ## How to Get Started ##
-  > Just pop in your area code!
+  > Just pop in your city of choice!
 
 ## Customer Quote ##
-  > "My weekends have never been fun until this website rolled around - now I know where to go for the yummiest dish or the coolest museum exhibition"
+  > "The world is truly an oyster for a developer like me. Thank you Where To Move for making me make the jump!"
   
 ## Closing and Call to Action ##
-  > Check us out here: doyouevenhashtag.herokuapp.com
+  > Check us out here: wheretomove.herokuapp.com
