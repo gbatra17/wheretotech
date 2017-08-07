@@ -13,11 +13,13 @@
   		</ul>
   	</li>
   </ul>
-<!--   <div class="container" ng-style="{'background-image': 'url(' + imageurl + ')',
-  	'background-size': cover,
-  	'width': auto,
-  	'height': auto,
-  	'max-width':'100%',
-	'max-height':'100%'}">hello</div> -->
-  <div class="container" ng-style="setBackground()"></div>
+  <div class="imgContainer" ng-style="setBackground()"></div>
+  <div class="weatherContainer" ng-if="weather != null">
+    <h3> Weather Conditions </h3>
+  	<ul>
+  		<li ng-repeat="weatherProp in weather">
+  			<strong> {{weatherProp.label}} </strong> = {{ weatherProp.float_value || weatherProp.string_value }}
+  		</li>
+  	</ul>
+  </div>
  </div> 

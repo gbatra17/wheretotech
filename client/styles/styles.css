@@ -9,18 +9,12 @@ body {
 	background: : #fff;
 }
 
-/*.search-bar .btn{
-	border-radius: 5px;
-}*/
-
-.joblist {
-	border-radius: 2px;
-}
-div.container {
+div.imgContainer {
 	margin: 10px;
     width:300px;
 	height:200px;
 	padding: 0px 5px 5px 5px;
+	display: inline-block;
 }
 
 li.joblistentry {
@@ -33,3 +27,12 @@ li.joblistentry {
 	display: inline-block;
 }
 
+div.weatherContainer {
+	margin: 10px;
+    width:auto;
+	height:auto;
+	padding: 0px 10px 10px 10px;
+	display: inline-block;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 5px;
+}

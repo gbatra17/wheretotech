@@ -1,17 +1,3 @@
-// angular.module('teleport')
-// .controller('SearchCtrl', function($http) {
-// 	TeleportAutocomplete.init('#tp-input').on('change', function(value) {
-// 		teleportSearch.search(value);
-// 	});
-// })
-// .component('search', {
-// 	bindings: {
-// 		search: '<'
-// 	},
-// 	controller:'SearchCtrl',
-// 	templateUrl: '../views/search.html'
-// })
-
 angular
   .module('teleport')
   .component('search', {
@@ -21,8 +7,6 @@ angular
   .controller('SearchCtrl', ['$http', '$scope',
   	function($http, $scope) {
 
-  	// $scope.listOfJobs = [];
-
   	$scope.Math = window.Math;
 
     const citySalaryBySlug = slug =>
@@ -30,6 +14,9 @@ angular
 
     const cityImageBySlug = slug =>
     	`https://api.teleport.org/api/urban_areas/slug:${slug}/images`;
+
+    const cityDetailseBySlug = slug =>
+    	`https://api.teleport.org/api/urban_areas/slug:${slug}/details`;
 
     const filterBySoftwareJobs = jobId => {
       const lowerJobId = jobId.toLowerCase();
@@ -59,7 +46,6 @@ angular
         url: cityImageBySlug(slug),
       }).then(({ data }) => {
       	var imageurl = data.photos[0].image.mobile;
-      	      	console.log('this is the scope:', data.photos[0].image.mobile);
       	$scope.setBackground = function(){
     	return {
             'background-image':'url(' + imageurl + ')',
@@ -68,15 +54,24 @@ angular
   			'max-height': '100%',
   			'border-radius': '10px',
   			'box-shadow': '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
-
         }
 		} 
 
       });  
 
+    const getCityDetails = slug =>
+      $http({
+        method: 'GET',
+        url: cityDetailseBySlug(slug),
+      }).then(({ data }) => {
+      	//weather is category number two 
+        $scope.weather = data.categories[2].data;
+      });
+
     TeleportAutocomplete.init('#tp-input').on('change', function(value){
     	$scope.titleOfCity = value.title;
     	getCityInfo(value.uaSlug);
-    	getWeatherImage(value.uaSlug)
+    	getWeatherImage(value.uaSlug);
+    	getCityDetails(value.uaSlug);
     })
   }]);
