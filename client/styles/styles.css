@@ -43,3 +43,7 @@ div.weatherContainer {
 	background-color: white;
 }
 
+button {
+	display: inline-block;
+	margin: 10px;
+}

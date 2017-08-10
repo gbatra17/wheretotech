@@ -76,12 +76,43 @@ angular
         method: 'GET',
         url: cityScoresBySlug(slug),
       }).then(({data}) => {
-      	console.log(data);
       	$scope.urbanScores = data.categories;
       });
 
+    $http.get('/api/cities')
+    .success(function(data) {
+      $scope.cities = data;
+      console.log(data);
+    })
+    .error(function(data) {
+      console.log('Error' + data);
+    })
+
+    $scope.deleteCity = function(id) {
+    $http.delete('/api/cities/' + id)
+        .success(function(data) {
+            $scope.cities = data;
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+    };
+
     TeleportAutocomplete.init('#tp-input').on('change', function(value){
-    	$scope.titleOfCity = value.title;
+    	$scope.titleOfCity = {
+        title: value.title
+      };
+      console.log($scope.titleOfCity);
+      $scope.addCity = function(){
+        $http.post('/api/cities', $scope.titleOfCity)
+        .success(function(data) {
+          $scope.cities = data;
+          console.log(data);
+        })
+        .error(function(data) {
+          console.log('Error:' + data);
+        })
+      }
     	getCityInfo(value.uaSlug);
     	getCityImage(value.uaSlug);
     	getWeatherDetails(value.uaSlug);

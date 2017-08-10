@@ -1,6 +1,7 @@
 <div class="search-bar form-inline">
  <h2>Search here: </h2>  
   <input id="tp-input" class="form-control" type="text"/> 
+  <button type="submit" class="btn btn-primary btn-lg" ng-click="addCity()">Add City! {{ titleOfCity.title }} </button>
 <!--   <div> {{titleOfCity}} </div>
  --><ul class="joblist">
   	<li class="joblistentry" ng-repeat="job in listOfJobs">
@@ -36,5 +37,11 @@
   		<li> {{urbanScores[14].name}}: {{ Math.floor(urbanScores[14].score_out_of_10)}}   </li>
   		<li> {{urbanScores[16].name}}: {{ Math.floor(urbanScores[16].score_out_of_10)}}   </li>
   	</ul>
+  </div>
+  <div><h2> Current List of Cities </h2><div>
+  <div class="listOfCites" ng-repeat="city in cities">
+      <label>
+          <input type="checkbox" ng-click=deleteCity(city._id)> {{ city.name }}
+      </label>
   </div>
  </div> 

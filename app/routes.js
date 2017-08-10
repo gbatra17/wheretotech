@@ -1,4 +1,4 @@
-var City = require('./models/city.js');
+var City = require('./models/city');
 
 module.exports = function(app) {
 
@@ -14,8 +14,9 @@ module.exports = function(app) {
 	});
 
 	app.post('/api/cities', function(req, res) {
+
 		City.create({
-			text : req.body.text,
+			name : req.body.title,
 		}, function(err, city) {
 			if(err){
 				res.send(err);
@@ -24,12 +25,12 @@ module.exports = function(app) {
 				if(err){
 					res.send(err);
 				}
-				res.json(cities);
-			});
+			res.json(cities);
 		});
 	});
-
+});
 	app.delete('/api/cities/:city_id', function(req, res) {
+		console.log('these are the params: ' + req.params);
 		City.remove({
 			_id: req.params.city_id
 		}, function(err, city) {

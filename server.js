@@ -8,11 +8,11 @@ var methodOverride = require('method-override');
 var port = process.env.PORT || '3000';
 var app = express();
 //config file that connects to mLabs database
-var db = require('./server/config.js')
+var db = require('./app/config.js')
 
 app.use(morgan('dev'));    
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override')); 
 app.use(express.static(__dirname + '/node_modules'));
 app.use(express.static(__dirname + '/client'));
