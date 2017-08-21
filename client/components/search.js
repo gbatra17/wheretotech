@@ -70,6 +70,7 @@ angular
       }).then(({ data }) => {
       	//weather is category number two 
         $scope.weather = data.categories[2].data;
+        console.log($scope.weather);
       });
 
     const getUrbanDetails = slug =>
@@ -98,6 +99,7 @@ angular
             console.log('Error: ' + data);
         });
     };
+
     $scope.showMeVault = function() {
       $scope.showMe = !$scope.showMe;
     }
@@ -106,14 +108,14 @@ angular
       return languageString.split(';').map((language) => language.replace(' ', ''));
     }
 
-    const manipulateData = function(data) {
+    const manipulateData = function(data, sortFilter) {
       return data.reduce(function(total, el) {
-        return total.concat(format(el.HaveWorkedLanguage));
+        return total.concat(format(el[sortFilter]));
       }, []);
     }
 
-    const tallyLanguages = function(data) {
-      var arrayOfLangs = manipulateData(data);
+    const tallyLanguages = function(data, sortFilter) {
+      var arrayOfLangs = manipulateData(data, sortFilter);
       $scope.totalLangEntries = arrayOfLangs.length;
       var programmingLangsUnsorted = arrayOfLangs.reduce(function(totalLangs, lang){
         if(lang in totalLangs){
@@ -127,8 +129,11 @@ angular
       return programmingLangsUnsorted;
     }
 
-    const sortLangObject = function(data) {
-      var programmingLangsUnsorted = tallyLanguages(data);
+    const sortLangObject = function(data, sortFilter) {
+      var programmingLangsUnsorted = tallyLanguages(data, sortFilter);
+      if(programmingLangsUnsorted.hasOwnProperty('NA')){
+        delete programmingLangsUnsorted['NA'];
+      }
       var sortable = [];
       for (var lang in programmingLangsUnsorted) {
           sortable.push([lang, programmingLangsUnsorted[lang]]);
@@ -136,6 +141,7 @@ angular
       sortable.sort(function(a, b) {
           return b[1] - a[1];
       });
+      console.log(programmingLangsUnsorted);
       return sortable;
     }
 
@@ -145,7 +151,12 @@ angular
       }
       $http.post('/api/countries', $scope.countryName)
       .success(function(data) {
-        $scope.programmingLangsSorted = sortLangObject(data);
+        $scope.programmingLangsSorted = sortLangObject(data, 'HaveWorkedLanguage');
+        $scope.desiredProgrammingLangs = sortLangObject(data, 'WantWorkLanguage');
+        $scope.frameworksSorted = sortLangObject(data, 'HaveWorkedFramework');
+        $scope.desiredFrameworks = sortLangObject(data, 'WantWorkFramework');
+        $scope.databasesSorted = sortLangObject(data, 'HaveWorkedDatabase');
+        $scope.desiredDatabases = sortLangObject(data, 'WantWorkDatabase');
       })
       .error(function(data) {
         console.log('Error:', data);

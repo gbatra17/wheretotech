@@ -48,7 +48,6 @@ module.exports = function(app) {
 	});
 
 	app.post('/api/countries', function(req, res) {
-		console.log('this is the req body', req.body);
 		Country.find({'Country': req.body.countryName },function(err, countries) {
 			if(err){
 				res.send(err);
