@@ -114,6 +114,7 @@ angular
 
     const tallyLanguages = function(data) {
       var arrayOfLangs = manipulateData(data);
+      $scope.totalLangEntries = arrayOfLangs.length;
       var programmingLangsUnsorted = arrayOfLangs.reduce(function(totalLangs, lang){
         if(lang in totalLangs){
           totalLangs[lang]++;
@@ -144,7 +145,7 @@ angular
       }
       $http.post('/api/countries', $scope.countryName)
       .success(function(data) {
-        console.log(sortLangObject(data));
+        $scope.programmingLangsSorted = sortLangObject(data);
       })
       .error(function(data) {
         console.log('Error:', data);

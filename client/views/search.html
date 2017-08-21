@@ -53,5 +53,15 @@
   	</ul>
 	</div>
 
+	<div class="programmingLangsContainer" ng-if="programmingLangsSorted != null">
+			<h4> Popular Programming Languages in {{ titleOfCity.countryName }}</h4>
+			<ul>
+				<li ng-repeat="lang in programmingLangsSorted|limitTo:5">
+					<strong> {{lang[0]}} </strong> = {{ Math.floor((lang[1]/totalLangEntries)*100) }}%*
+				</li>
+			</ul>
+			<p>* of total respondents. List is missing remaining languages </p>
+	</div>
+
 </div>
 </div> 
