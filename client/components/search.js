@@ -7,8 +7,9 @@ angular
   .controller('SearchCtrl', ['$http', '$scope',
   	function($http, $scope) {
 
-  	$scope.Math = window.Math;
-
+    $scope.Math = window.Math;
+    $scope.showMe = false;
+    
     const citySalaryBySlug = slug =>
       `https://api.teleport.org/api/urban_areas/slug:${slug}/salaries`;
 
@@ -97,17 +98,70 @@ angular
             console.log('Error: ' + data);
         });
     };
+    $scope.showMeVault = function() {
+      $scope.showMe = !$scope.showMe;
+    }
+
+    const format = function(languageString) {
+      return languageString.split(';').map((language) => language.replace(' ', ''));
+    }
+
+    const manipulateData = function(data) {
+      return data.reduce(function(total, el) {
+        return total.concat(format(el.HaveWorkedLanguage));
+      }, []);
+    }
+
+    const tallyLanguages = function(data) {
+      var arrayOfLangs = manipulateData(data);
+      var programmingLangsUnsorted = arrayOfLangs.reduce(function(totalLangs, lang){
+        if(lang in totalLangs){
+          totalLangs[lang]++;
+        }
+        else {
+          totalLangs[lang] = 1;
+        }
+        return totalLangs;
+      }, {})
+      return programmingLangsUnsorted;
+    }
+
+    const sortLangObject = function(data) {
+      var programmingLangsUnsorted = tallyLanguages(data);
+      var sortable = [];
+      for (var lang in programmingLangsUnsorted) {
+          sortable.push([lang, programmingLangsUnsorted[lang]]);
+      }
+      sortable.sort(function(a, b) {
+          return b[1] - a[1];
+      });
+      return sortable;
+    }
+
+    const getProgrammingDetails = function(countryName) {
+      $scope.countryName = {
+        countryName: countryName
+      }
+      $http.post('/api/countries', $scope.countryName)
+      .success(function(data) {
+        console.log(sortLangObject(data));
+      })
+      .error(function(data) {
+        console.log('Error:', data);
+      })
+    }
 
     TeleportAutocomplete.init('#tp-input').on('change', function(value){
     	$scope.titleOfCity = {
-        title: value.title
+        title: value.title,
+        countryName: value.title.split(',')[2].replace(' ', '')
       };
-      console.log($scope.titleOfCity);
+      console.log($scope.titleOfCity.countryName);
       $scope.addCity = function(){
         $http.post('/api/cities', $scope.titleOfCity)
         .success(function(data) {
           $scope.cities = data;
-          console.log(data);
+          //console.log(data);
         })
         .error(function(data) {
           console.log('Error:' + data);
@@ -116,6 +170,7 @@ angular
     	getCityInfo(value.uaSlug);
     	getCityImage(value.uaSlug);
     	getWeatherDetails(value.uaSlug);
-    	getUrbanDetails(value.uaSlug);
+      getUrbanDetails(value.uaSlug);
+      getProgrammingDetails($scope.titleOfCity.countryName);
     })
   }]);

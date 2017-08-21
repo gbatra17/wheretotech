@@ -1,4 +1,5 @@
 var City = require('./models/city');
+var Country = require('./models/country');
 
 module.exports = function(app) {
 
@@ -30,7 +31,6 @@ module.exports = function(app) {
 	});
 });
 	app.delete('/api/cities/:city_id', function(req, res) {
-		console.log('these are the params: ' + req.params);
 		City.remove({
 			_id: req.params.city_id
 		}, function(err, city) {
@@ -46,4 +46,14 @@ module.exports = function(app) {
 			});
 		});
 	});
+
+	app.post('/api/countries', function(req, res) {
+		console.log('this is the req body', req.body);
+		Country.find({'Country': req.body.countryName },function(err, countries) {
+			if(err){
+				res.send(err);
+			}
+			res.json(countries);
+		});
+	})
 };
