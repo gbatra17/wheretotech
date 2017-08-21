@@ -53,6 +53,11 @@
   	</ul>
 	</div>
 
+	<div class="col-md-10 basicContainer" ng-if="titleOfCity != null">
+		<p>The following cards show programming trends per country based on StackOverflow Survey Results(2017).</p>
+		<p>The 'desired' cards reveal responedents interests in learning new tools due to current market interests, relative to their country</p>
+	</div>
+
 	<div class="programmingLangsContainer" ng-if="programmingLangsSorted != null">
 			<h4> Popular Programming Languages in {{ titleOfCity.countryName }}</h4>
 			<ul>
@@ -60,7 +65,58 @@
 					<strong> {{lang[0]}} </strong> = {{ Math.floor((lang[1]/totalLangEntries)*100) }}%*
 				</li>
 			</ul>
-			<p>* of total respondents. List is missing remaining languages </p>
+			<p>* of total respondents. </p>
+	</div>
+
+	<div class="programmingLangsContainer" ng-if="desiredProgrammingLangs != null">
+			<h4> Desired Programming Languages in {{ titleOfCity.countryName }}</h4>
+			<ul>
+				<li ng-repeat="lang in desiredProgrammingLangs|limitTo:5">
+					<strong> {{lang[0]}} </strong> = {{ Math.floor((lang[1]/totalLangEntries)*100) }}%*
+				</li>
+			</ul>
+			<p>* of total respondents. </p>
+			<!-- <p>*Respondents mentioned they would like to learn these languages this year due to current market demands. </p> -->
+	</div>
+
+	<div class="programmingLangsContainer" ng-if="frameworksSorted != null">
+			<h4> Popular Frameworks in {{ titleOfCity.countryName }}</h4>
+			<ul>
+				<li ng-repeat="lang in frameworksSorted|limitTo:5">
+					<strong> {{lang[0]}} </strong> = {{ Math.floor((lang[1]/totalLangEntries)*100) }}%*
+				</li>
+			</ul>
+			<p>* of total respondents. </p>
+	</div>
+
+	<div class="programmingLangsContainer" ng-if="desiredFrameworks != null">
+			<h4> Desired Frameworks in {{ titleOfCity.countryName }}</h4>
+			<ul>
+				<li ng-repeat="lang in desiredFrameworks|limitTo:5">
+					<strong> {{lang[0]}} </strong> = {{ Math.floor((lang[1]/totalLangEntries)*100) }}%*
+				</li>
+			</ul>
+			<p>* of total respondents. </p>
+	</div>
+
+	<div class="programmingLangsContainer" ng-if="databasesSorted != null">
+			<h4> Popular Database Management Systems in {{ titleOfCity.countryName }}</h4>
+			<ul>
+				<li ng-repeat="lang in databasesSorted|limitTo:5">
+					<strong> {{lang[0]}} </strong> = {{ Math.floor((lang[1]/totalLangEntries)*100) }}%*
+				</li>
+			</ul>
+			<p>* of total respondents. </p>
+	</div>
+
+	<div class="programmingLangsContainer" ng-if="desiredDatabases != null">
+			<h4> Desired Database Management Systems in {{ titleOfCity.countryName }}</h4>
+			<ul>
+				<li ng-repeat="lang in desiredDatabases|limitTo:5">
+					<strong> {{lang[0]}} </strong> = {{ Math.floor((lang[1]/totalLangEntries)*100) }}%*
+				</li>
+			</ul>
+			<p>* of total respondents. </p>
 	</div>
 
 </div>
