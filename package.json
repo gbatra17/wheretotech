@@ -1,17 +1,12 @@
 {
   "name": "wheretotech",
   "version": "1.0.0",
-  "description": "showing the best place for engineers to move",
+  "description": "Showing the best place for engineers to move",
   "engines": {
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gbatra17/wheretotech.git"
   },
   "author": "garima batra",
   "license": "MIT",
