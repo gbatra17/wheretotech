@@ -1,51 +1,54 @@
-var City = require('./models/city');
-var Country = require('./models/country');
+// Modules
+const express = require('express')
+const router = express.Router()
 
-module.exports = function(app) {
-  // Get all cities
-  app.get('/cities', (req, res) => {
-    City.find(function(err, cities) {
-      if (err) res.send(err);
-      res.json(cities);
-    });
-  });
+// Models
+var City = require('./models/city')
+var Country = require('./models/country')
 
-  // Add new city
-  app.post('/cities', (req, res) => {
-    City.create({
-      name: req.body.title,
-    }, (err, city) => {
-      if (err) res.send(err);
-      City.find((err, cities) => {
-        if (err) res.send(err);
-        res.json(cities);
-      });
-    });
-  });
+// Get all cities
+router.get('/cities', (req, res) => {
+  City.find((err, cities) => {
+    if (err) res.send(err)
+    res.json(cities)
+  })
+})
 
-  // Delete a city
-  app.delete('/cities/:city_id', (req, res) => {
-    City.remove({
-      _id: req.params.city_id
-    }, (err, city) => {
-      if (err) res.send(err);
+// Add new city
+router.post('/cities', (req, res) => {
+  City.create({
+    name: req.body.title,
+  }, (err, city) => {
+    if (err) res.send(err)
+    City.find((err, cities) => {
+      if (err) res.send(err)
+      res.json(cities)
+    })
+  })
+})
 
-      City.find((err, cities) => {
-        if (err) res.send(err);
+// Delete a city
+router.delete('/cities/:city_id', (req, res) => {
+  City.remove({
+    _id: req.params.city_id
+  }, (err, city) => {
+    if (err) res.send(err)
 
-        res.json(cities);
-      });
-    });
-  });
+    City.find((err, cities) => {
+      if (err) res.send(err)
+      res.json(cities)
+    })
+  })
+})
 
-  // Add new country
-  app.post('/api/countries', function(req, res) {
-    Country.find({
-      'Country': req.body.countryName
-    }, (err, countries) => {
-      if (err) res.send(err);
+// Add new country
+router.post('/countries', (req, res) => {
+  Country.find({
+    'Country': req.body.countryName
+  }, (err, countries) => {
+    if (err) res.send(err)
+    res.json(countries)
+  })
+})
 
-      res.json(countries);
-    });
-  });
-};
+module.exports = router;
