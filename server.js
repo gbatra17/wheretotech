@@ -1,30 +1,33 @@
-//modules ====================================
-var express = require('express');
-var partials = require('express-partials');
-var morgan = require('morgan');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
+// Modules
+var express = require('express')
+var morgan = require('morgan')
+var bodyParser = require('body-parser')
+var methodOverride = require('method-override')
 
-var port = process.env.PORT || '3000';
-var app = express();
-//config file that connects to mLabs database
-var db = require('./app/config.js');
+// Config file that connects to mLabs database
+var db = require('./app/config.js')
+var API = require('./app/routes.js')
+var port = process.env.PORT || '3000'
+var app = express()
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
+// Parsers
+app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
-}));
-app.use(methodOverride('X-HTTP-Method-Override'));
-app.use(express.static(__dirname + '/node_modules'));
-app.use(express.static(__dirname + '/client'));
+}))
+app.use(morgan('dev'))
+app.use(methodOverride('X-HTTP-Method-Override'))
 
-//set up relative port since it's being deployed on Heroku
-app.listen(port, function() {
-  console.log('MVP listening on port 3000!');
-});
+// Static routing
+app.use(express.static(__dirname + '/node_modules', {
+  maxAge: 31557600000
+}))
+app.use(express.static(__dirname + '/client'))
 
-//routes
-require('./app/routes.js')(app);
+// Routes
+app.use('/api', API)
 
-module.exports = app;
+// Relative port listening
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}!`)
+})
