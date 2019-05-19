@@ -5,8 +5,8 @@ var bodyParser = require('body-parser')
 var methodOverride = require('method-override')
 
 // Config file that connects to mLabs database
-var db = require('./app/config.js')
-var API = require('./app/routes.js')
+var db = require('./server/config.js')
+var API = require('./server/routes.js')
 var port = process.env.PORT || '3000'
 var app = express()
 
