@@ -1,0 +1,21 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  font-size: 18px;
+  line-height: 1.7;
+  background-color: #333333;
+  padding: 25px 50px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.TypistExample-header {
+  margin-top: 5%;
+  margin-bottom: 15%;
+  text-align: center;
+  font-size: 3em;
+  cursor: pointer;
+  color: #22bad9;
+}
