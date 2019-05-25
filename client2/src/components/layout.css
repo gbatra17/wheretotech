@@ -4,18 +4,22 @@ html {
 }
 body {
   font-size: 18px;
-  line-height: 1.7;
-  background-color: #333333;
-  padding: 25px 50px;
+  height: 100%;
+  width: 100%;
   margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: #333333;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .TypistExample-header {
-  margin-top: 5%;
-  margin-bottom: 15%;
+  margin-top: 20%;
+  display: flex;
   text-align: center;
   font-size: 3em;
   cursor: pointer;
   color: #22bad9;
+  justify-content: center;
+  align-items: center;
 }

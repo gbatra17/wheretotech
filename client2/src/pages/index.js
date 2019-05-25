@@ -1,23 +1,21 @@
 import React from "react"
-import { Link } from "gatsby"
 import Typist from "react-typist"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import "react-typist/dist/Typist.css"
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Typist
-      className="TypistExample-header"
-      avgTypingDelay={40}
-      startDelay={1000}
-    >
-      where do you want to tech?
+    <Typist className="TypistExample-header">
+      <span> > where do you want to : code?</span>
+      <Typist.Backspace count={5} delay={200} />
+      <span> do UX?</span>
+      <Typist.Backspace count={6} delay={200} />
+      <span> be a software engineer?</span>
+      <Typist.Backspace count={25} delay={200} />
+      <span>tech? </span>
     </Typist>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
