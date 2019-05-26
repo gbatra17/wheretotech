@@ -8,6 +8,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
   overflow: auto;
   background-color: #333333;
   -webkit-font-smoothing: antialiased;
@@ -15,11 +16,7 @@ body {
 }
 .TypistExample-header {
   margin-top: 20%;
-  display: flex;
   text-align: center;
   font-size: 3em;
-  cursor: pointer;
   color: #22bad9;
-  justify-content: center;
-  align-items: center;
 }
