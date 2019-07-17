@@ -1,10 +1,10 @@
 import React from "react"
 
-const Signature = () => (
+const Signature = props => (
   <>
-    <span style={{ color: "#0f0" }}>mymacbook@techjobs</span>:
-    <span style={{ color: "#0bc" }}>~</span>
-    <span style={{ color: "#ff0096" }}>$</span>
+    <span style={{ color: "#0f0" }}>mymacbook</span>:&nbsp;
+    <span style={{ color: "#0bc" }}>{props.directory}</span>
+    <span style={{ color: "#ff0096" }}>&nbsp;$</span>
   </>
 )
 

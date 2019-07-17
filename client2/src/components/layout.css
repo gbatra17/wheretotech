@@ -4,12 +4,6 @@ html {
 }
 body {
   font-size: 18px;
-  /* height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  overflow: auto; */
   width: 750px;
   margin-left: auto;
   margin-right: auto;
@@ -19,15 +13,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.command_line {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 22px;
+}
+.command_line_2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  visibility: hidden;
+  font-size: 22px;
+  animation: 0s linear 1.5s forwards delayedShow;
+}
+@keyframes delayedShow {
+  to {
+    visibility: visible;
+  }
+}
 .TypistExample-header {
-  /* margin-top: 20%;
-  text-align: center; */
   font-size: 3em;
   color: #00ffff;
 }
 
 .typist_command {
-  text-align: right;
+  text-align: left;
+  margin-left: 10px;
   font-size: 1em;
   color: #00ffff;
 }
