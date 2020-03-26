@@ -22,4 +22,4 @@ WhereToTech gives you salary details and urban conditions for tech jobs in every
 
 > "Making the jump for your next tech job has never been easier"
 
-Check it out here: wheretomove.herokuapp.com
+Check it out here: http://wheretotech.herokuapp.com/
