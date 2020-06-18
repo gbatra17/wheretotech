@@ -11,7 +11,7 @@
   "author": "garima batra",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.6.5",
+    "angular": "^1.8.0",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "eslint": "^4.4.1",
